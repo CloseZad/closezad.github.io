@@ -20,6 +20,7 @@ import "./components/GameGallery.css";
 import resume from "./Updated.pdf";
 import resume2 from "./UpdatedHW.pdf";
 import heartImage from "./images/heart.jpeg";
+import melol from "./images/melol.jpg";
 
 function App() {
   const [page, setPage] = useState("splash");
@@ -95,7 +96,7 @@ function App() {
         <div className="content">
           <div id="welcome" className="section">
             <img
-              src="https://lh3.googleusercontent.com/pw/AP1GczNznBJhEmOgbtoMo1RgZJETqZVUiALT79ORzzBbyAHbuEIHj86vkcAcun13FE1bB945j9ASeCmEbiPq8zBq8ieTuhomfc7KJs-Il_5-nvI_H8vJKJXPxtf6GhDO57aLYSzjjCw2SSIs8NQtGbQTGQAQXg=w1168-h1556-s-no-gm?authuser=0"
+              src={melol}
               alt="Farzad Rahman"
               className="profile-photo"
             />
