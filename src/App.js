@@ -18,7 +18,6 @@ import GameGallery from "./components/GameGallery";
 import "./components/ProjectsCarousel.css";
 import "./components/GameGallery.css";
 import resume from "./Updated.pdf";
-import resume2 from "./UpdatedHW.pdf";
 import heartImage from "./images/heart.jpeg";
 import melol from "./images/melol.jpg";
 
@@ -95,11 +94,7 @@ function App() {
         <Navbar />
         <div className="content">
           <div id="welcome" className="section">
-            <img
-              src={melol}
-              alt="Farzad Rahman"
-              className="profile-photo"
-            />
+            <img src={melol} alt="Farzad Rahman" className="profile-photo" />
             <h1>Hi, I'm Farzad</h1>
             <p>
               This site is in no way a representation of myself nor my image,
@@ -147,15 +142,6 @@ function App() {
                 style={{ padding: "0 15px" }} // Add horizontal padding
               >
                 Software Resume
-              </a>
-              <a
-                href={resume2}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="resume-button"
-                style={{ padding: "0 15px" }} // Add horizontal padding
-              >
-                Hardware Resume
               </a>
             </div>
           </div>
@@ -332,7 +318,7 @@ function App() {
         )}
       </div>
     ),
-    [showVideo]
+    [showVideo],
   );
 
   function SecretComponent() {

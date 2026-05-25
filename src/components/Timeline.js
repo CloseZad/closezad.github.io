@@ -46,7 +46,7 @@ export default function Timeline() {
       logo: "https://s8-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/250/200/original/V-Screen-Blue.png?1724790892",
       title: "Software Developer",
       period: "Jan 2026 - Apr 2026",
-      description: "Currently working here, see my Resume for details",
+      description: "SAAS sales planning software development.",
     },
   ];
 

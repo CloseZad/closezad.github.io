@@ -10,6 +10,17 @@ import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 const projects = [
   {
     id: 1,
+    title: "BranchAI",
+    description:
+      "A Gemini shell with a unique branching feature that allows users to create side chats on specific messages, preventing context pollution by interrupting your stream of thought with closable branches.",
+    image:
+      "https://raw.githubusercontent.com/CloseZad/BranchAI/refs/heads/main/demo.png",
+    githubUrl: "https://github.com/CloseZad/BranchAI",
+    liveUrl: "https://closezad.design/BranchAI/",
+    technologies: ["React", "Typescript", "Vite", "Google GenAI SDK"],
+  },
+  {
+    id: 2,
     title: "Spotify-Intelligence",
     description:
       "A work in progress project that uses Spotify's API to analyze and visualize your listening habits. It provides insights into your most played artists, genres, and tracks, as well as personalized recommendations based on your music preferences. Built with React for the frontend and Express for the backend. I need some Claude credits pls.",
@@ -20,7 +31,7 @@ const projects = [
     technologies: ["React", "Express", "Spotify API", "Anthropic API"],
   },
   {
-    id: 2,
+    id: 3,
     title: "PickUpTracker",
     description:
       "Pickup Tracker is a mobile-first web app that makes managing pickup games effortless — add teams, track who’s in play, and rotate matches automatically with different rulesets. Built with React, Tailwind, and Express for fast, seamless game management anywhere.",
@@ -32,7 +43,7 @@ const projects = [
     technologies: ["React", "Tailwind", "Express"],
   },
   {
-    id: 3,
+    id: 4,
     title: "TopSpeedTracker",
     description:
       "A small app (that you can use for youself) for Assetto Corsa (racing simulator software) that tracks speed in-engine as well as your session's top speed achieved. Supports switching between imperial and metric units.",
@@ -44,7 +55,7 @@ const projects = [
     technologies: ["Python", "Assetto Corsa", "Numpy"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Tales of Nuiryn",
     description:
       "In June 2020, my friends and I entered a game jam (game hackathon) hosted by the University of Waterloo's Games Institute. I was one of the lead developers on our team where we somehow won an award. Personally, I think making an RPG for a game jam is a terrible idea.",
@@ -56,7 +67,7 @@ const projects = [
     technologies: ["C#", "Unity3D", "Java"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Disgraph (Hack the North 2020 Submission)",
     description:
       "Wrote script functions for a discord bot that generates graphs from user input data based on graph style choice and details.",
@@ -68,7 +79,7 @@ const projects = [
     technologies: ["Python", "Matplotlib", "Discord API"],
   },
   {
-    id: 6,
+    id: 7,
     title: "chAD (EngHacks 2021 Submission)",
     description:
       "Designed social media monetization system via a discord bot that generates custom ads based on wishes of the server's owner. Curated for businesses looking to market in new spaces, and server owners looking to make ad-revenue.",
@@ -91,7 +102,7 @@ export default function ProjectsCarousel() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+        prevIndex === projects.length - 1 ? 0 : prevIndex + 1,
       );
     }, 5000);
 
@@ -106,7 +117,7 @@ export default function ProjectsCarousel() {
 
   const goToPrevious = () => {
     setCurrentIndex(
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1
+      currentIndex === 0 ? projects.length - 1 : currentIndex - 1,
     );
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
@@ -114,7 +125,7 @@ export default function ProjectsCarousel() {
 
   const goToNext = () => {
     setCurrentIndex(
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1
+      currentIndex === projects.length - 1 ? 0 : currentIndex + 1,
     );
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
