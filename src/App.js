@@ -299,20 +299,18 @@ function App() {
           </>
         ) : (
           <div style={{ marginTop: "20px" }}>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>:D</h3>
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>
+              We could have just talked
+            </h3>
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/R_FcuAqTAFk?si=GM7P1cyrpG5Wr9Cu"
+              src="https://www.youtube.com/embed/MbbeETr9j0c?si=kTuxDCGsbcP6fmrg"
               title="YouTube video player"
-              frameBorder="0"
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              style={{
-                borderRadius: "8px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-              }}
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
             ></iframe>
           </div>
         )}
