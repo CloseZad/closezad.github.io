@@ -299,10 +299,8 @@ function App() {
           </>
         ) : (
           <div style={{ marginTop: "20px" }}>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>
-              We could have just talked
-            </h3>
-            <iframe
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}></h3>
+            {/* <iframe
               width="560"
               height="315"
               src="https://www.youtube.com/embed/MbbeETr9j0c?si=kTuxDCGsbcP6fmrg"
@@ -311,7 +309,7 @@ function App() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
-            ></iframe>
+            ></iframe> */}
           </div>
         )}
       </div>
@@ -438,116 +436,140 @@ function App() {
       {page === "splash" && renderSplash()}
       {page === "" && renderPage()}
       {page === "secret" && <SecretComponent />}
-      {page !== "" && page !== "splash" && page !== "secret" && (
+      {page === "Mio" && (
         <div
           style={{
-            position: "fixed",
-            top: "20px",
-            left: "20px",
-            zIndex: 1001,
-            background: "rgba(0,0,0,0.8)",
-            padding: "10px 20px",
-            borderRadius: "8px",
+            minHeight: "100vh",
+            width: "100vw",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#000",
+            color: "#fff",
+            textAlign: "center",
+            fontSize: "1.25rem",
+            padding: "20px",
           }}
         >
-          <button
-            onClick={() => setPage("")}
+          <p style={{ margin: 0 }}>
+            You genuinely may be the worst person I have ever met. You care for
+            nobody but yourself. Good Riddance
+          </p>
+        </div>
+      )}
+      {page !== "" &&
+        page !== "splash" &&
+        page !== "secret" &&
+        page !== "Mio" && (
+          <div
             style={{
-              background: "none",
-              border: "none",
-              color: "white",
-              cursor: "pointer",
-              fontSize: "16px",
-              fontWeight: "bold",
-              marginBottom: "10px",
-              display: "block",
+              position: "fixed",
+              top: "20px",
+              left: "20px",
+              zIndex: 1001,
+              background: "rgba(0,0,0,0.8)",
+              padding: "10px 20px",
+              borderRadius: "8px",
             }}
           >
-            ← Back to Portfolio
-          </button>
+            <button
+              onClick={() => setPage("")}
+              style={{
+                background: "none",
+                border: "none",
+                color: "white",
+                cursor: "pointer",
+                fontSize: "16px",
+                fontWeight: "bold",
+                marginBottom: "10px",
+                display: "block",
+              }}
+            >
+              ← Back to Portfolio
+            </button>
 
-          <button
-            onClick={() => setShowQuestion(!showQuestion)}
-            style={{
-              background: "rgba(255,255,255,0.1)",
-              border: "1px solid rgba(255,255,255,0.3)",
-              color: "white",
-              cursor: "pointer",
-              fontSize: "14px",
-              padding: "5px 10px",
-              borderRadius: "4px",
-              marginBottom: showQuestion ? "10px" : "0",
-            }}
-          >
-            {showQuestion ? "Hide Secret Question" : "Show Secret Question"}
-          </button>
+            <button
+              onClick={() => setShowQuestion(!showQuestion)}
+              style={{
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.3)",
+                color: "white",
+                cursor: "pointer",
+                fontSize: "14px",
+                padding: "5px 10px",
+                borderRadius: "4px",
+                marginBottom: showQuestion ? "10px" : "0",
+              }}
+            >
+              {showQuestion ? "Hide Secret Question" : "Show Secret Question"}
+            </button>
 
-          {showQuestion && (
-            <div style={{ marginTop: "10px" }}>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "14px",
-                  marginBottom: "8px",
-                }}
-              >
-                When was our first date
-              </p>
-              <input
-                type="date"
-                value={questionAnswer}
-                onChange={(e) => setQuestionAnswer(e.target.value)}
-                placeholder="YYYY-MM-DD"
-                style={{
-                  padding: "5px 8px",
-                  borderRadius: "4px",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-                  fontSize: "14px",
-                  width: "150px",
-                  marginRight: "8px",
-                }}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
+            {showQuestion && (
+              <div style={{ marginTop: "10px" }}>
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    marginBottom: "8px",
+                  }}
+                >
+                  When was our first date
+                </p>
+                <input
+                  type="date"
+                  value={questionAnswer}
+                  onChange={(e) => setQuestionAnswer(e.target.value)}
+                  placeholder="YYYY-MM-DD"
+                  style={{
+                    padding: "5px 8px",
+                    borderRadius: "4px",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    background: "rgba(255,255,255,0.1)",
+                    color: "white",
+                    fontSize: "14px",
+                    width: "150px",
+                    marginRight: "8px",
+                  }}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") {
+                      if (questionAnswer === SECRET_DATE) {
+                        setPage("secret");
+                        setShowQuestion(false);
+                        setQuestionAnswer("");
+                      } else {
+                        alert("Incorrect date!");
+                        setQuestionAnswer("");
+                      }
+                    }
+                  }}
+                />
+                <button
+                  onClick={() => {
                     if (questionAnswer === SECRET_DATE) {
                       setPage("secret");
                       setShowQuestion(false);
                       setQuestionAnswer("");
                     } else {
-                      alert("Incorrect date!");
+                      alert("You're not her???");
                       setQuestionAnswer("");
                     }
-                  }
-                }}
-              />
-              <button
-                onClick={() => {
-                  if (questionAnswer === SECRET_DATE) {
-                    setPage("secret");
-                    setShowQuestion(false);
-                    setQuestionAnswer("");
-                  } else {
-                    alert("You're not her???");
-                    setQuestionAnswer("");
-                  }
-                }}
-                style={{
-                  background: "rgba(0,255,0,0.2)",
-                  border: "1px solid rgba(0,255,0,0.5)",
-                  color: "white",
-                  cursor: "pointer",
-                  fontSize: "12px",
-                  padding: "5px 8px",
-                  borderRadius: "4px",
-                }}
-              >
-                Submit
-              </button>
-            </div>
-          )}
-        </div>
-      )}
+                  }}
+                  style={{
+                    background: "rgba(0,255,0,0.2)",
+                    border: "1px solid rgba(0,255,0,0.5)",
+                    color: "white",
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    padding: "5px 8px",
+                    borderRadius: "4px",
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            )}
+          </div>
+        )}
     </>
   );
 }
