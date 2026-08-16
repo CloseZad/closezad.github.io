@@ -453,7 +453,9 @@ function App() {
         >
           <p style={{ margin: 0 }}>
             You genuinely may be the worst person I have ever met. You care for
-            nobody but yourself. Good Riddance
+            nobody but yourself. No wonder you always used to ask why people
+            don't like you. No wonder you have so many "ops". No wonder even
+            your family treats you like such. Good Riddance.
           </p>
         </div>
       )}
